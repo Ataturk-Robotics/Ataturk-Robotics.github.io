@@ -5,13 +5,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atatürk Robotics</title>
-    <style id="color-scheme">
-
-    </style>
 </head>
 
 <body>
+    <div class="center">
+        <!-- Todo: Find a proper png (hopefully even an svg) for the logo -->
+        <div class="banner-logo center"><img src="./media/Atarob-banner-logo.png" alt=""></div>
+        <div class="socials">
+            <div class="social-item">
+                <a href="https://instagram.com/AtaturkRobotics" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="social-item">
+                <a href="https://www.youtube.com/@AtaturkRobotics" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="social-item">
+                <a href="https://www.linkedin.com/in/atat%C3%BCrk-robotics-298101195/" target="_blank"><i
+                        class="fab fa-linkedin"></i></a>
+            </div>
+            <div class="social-item">
+                <a href="https://github.com/Ataturk-Robotics" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </div>
 
 </body>
+
+<style>
+    @import url('https://unpkg.com/@catppuccin/palette@0.1.4/css/catppuccin.css');
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css');
+
+    body {
+        color: var(--ctp-mocha-text);
+        background: var(--ctp-mocha-base);
+        padding: 0px;
+        margin: 0px;
+    }
+
+    a {
+        color: var(--ctp-mocha-text);
+        text-decoration: none;
+    }
+
+    .center {
+        width: 100%;
+        display: grid;
+        justify-items: center;
+    }
+
+    .banner-logo {
+        margin-top: 1rem;
+    }
+
+    .banner-logo img {
+        max-height: 50vh;
+        max-width: 30rem;
+    }
+
+    .socials {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 2rem;
+        margin-top: 1rem;
+    }
+
+    .social-item {
+        width: 4rem;
+        height: 4rem;
+        font-size: 4rem;
+        padding: 0.2rem;
+        transition: transform 150ms ease-in-out;
+    }
+
+    .social-item:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+
+    .fa-instagram {
+        color: var(--ctp-mocha-pink);
+    }
+
+    .fa-youtube {
+        color: var(--ctp-mocha-red);
+    }
+
+    .fa-linkedin {
+        color: var(--ctp-mocha-blue);
+    }
+
+    .fa-github {
+        color: var(--ctp-mocha-rosewater);
+    }
+</style>
 
 </html>
