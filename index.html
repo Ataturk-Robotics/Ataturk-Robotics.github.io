@@ -7,6 +7,8 @@
     <title>Atatürk Robotics</title>
 </head>
 
+<!-- frc logo 🔺⏺🔹 -->
+
 <body>
     <div class="center">
         <!-- Todo: Find a proper png (hopefully even an svg) for the logo -->
@@ -26,6 +28,17 @@
                 <a href="https://github.com/Ataturk-Robotics" target="_blank"><i class="fab fa-github"></i></a>
             </div>
         </div>
+        <div class="card about">
+            <h1>>Who Are We?</h1>
+            <div class="card-info">
+                <p>We are the Robotics <i class="fa-solid fa-robot emojify"></i>
+                    team of Dr. Vasıf Topçu Science High School
+                    based in <i class="fa-solid fa-location-dot emojify"></i>
+                    Istanbul, Turkey.
+                </p>
+                <img src="./media/Team-photo.jpg" alt="">
+            </div>
+        </div>
     </div>
 
 </body>
@@ -33,12 +46,14 @@
 <style>
     @import url('https://unpkg.com/@catppuccin/palette@0.1.4/css/catppuccin.css');
     @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
     body {
         color: var(--ctp-mocha-text);
         background: var(--ctp-mocha-base);
         padding: 0px;
         margin: 0px;
+        font-family: 'Roboto', sans-serif;
     }
 
     a {
@@ -57,14 +72,16 @@
     }
 
     .banner-logo img {
+        height: auto;
         max-height: 50vh;
-        max-width: 30rem;
+        width: 30rem;
+        max-width: 90vw;
     }
 
     .socials {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        grid-gap: 2rem;
+        /* grid-gap: 2rem; */
         margin-top: 1rem;
     }
 
@@ -72,8 +89,22 @@
         width: 4rem;
         height: 4rem;
         font-size: 4rem;
-        padding: 0.2rem;
+        padding: 1.2rem;
         transition: transform 150ms ease-in-out;
+    }
+
+    @media screen and (max-width: 400px) {
+        .socials {
+            grid-template-columns: repeat(2, 1fr);
+            /* grid-gap: 1rem; */
+        }
+
+        .social-item {
+            /* width: 3.5rem;
+            height: 3.5rem; */
+            font-size: 3.5rem;
+            padding: 1rem;
+        }
     }
 
     .social-item:hover {
@@ -96,6 +127,115 @@
     .fa-github {
         color: var(--ctp-mocha-rosewater);
     }
+
+    .card {
+        width: 30rem;
+        max-width: 80vw;
+        position: relative;
+        transition: transform 150ms ease-in-out;
+    }
+
+    .card:hover {
+        transform: scale(1.02);
+        cursor: pointer;
+    }
+
+    .card h1 {
+        font-size: 2rem;
+        font-weight: 500;
+        margin: 0;
+        padding-left: 0.5rem;
+    }
+
+    .card h1::after {
+        content: "";
+        display: block;
+        width: 13rem;
+        transition: width 300ms ease-in-out;
+        height: 0.2rem;
+        border-bottom: 2px solid var(--ctp-mocha-text);
+    }
+
+    .card h1:hover::after {
+        width: 100%;
+    }
+
+    .card img {
+        position: absolute;
+        top: 2.7rem;
+        width: 100%;
+        z-index: -100;
+        padding: 0.5rem;
+        border-radius: 0 1em;
+        transition: 150ms ease-in-out;
+    }
+
+    .card img:hover {
+        transform: scale(1.01);
+        margin-top: 0.4rem;
+    }
+
+    @media screen and (max-width: 400px) {
+        .card img {
+            top: unset;
+            margin-top: -1.8rem;
+        }
+
+        .card img:hover {
+            transform: none;
+            margin-top: -1.6rem;
+        }
+    }
+
+    .card p::before {
+        content: "";
+        margin-right: 0.5rem;
+    }
+
+    .card p {
+        font-size: 1.2rem;
+        font-weight: 300;
+        margin-top: 0.5rem;
+        margin-left: 0.5rem;
+        padding: 0.3rem;
+        background-color: rgba(49, 50, 68, 0.85);
+        width: calc(100% - 0.3rem);
+        box-shadow: 0.1rem 0.2rem 0.5rem rgba(0, 0, 0, 0.5);
+        border-radius: 0 0.4em;
+        transition: 150ms ease-in-out;
+    }
+
+    .card p:hover {
+        transform: scale(1.01);
+    }
 </style>
+
+<style id="emojify">
+    .emojify {
+        display: none;
+    }
+</style>
+
+<script>
+    let ecount = 0;
+    let laste = Date.now();
+
+    document.addEventListener("keypress", (e) => {
+        if (e.key == "e") {
+            if (laste + 1000 > Date.now()) {
+                ecount++;
+            } else {
+                ecount = 0;
+            }
+            laste = Date.now();
+        }
+
+        if (ecount > 2) {
+            ecount = 0;
+            laste = 0;
+            document.getElementById("emojify").disabled = !document.getElementById("emojify").disabled;
+        }
+    });
+</script>
 
 </html>
