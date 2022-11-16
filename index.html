@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atatürk Robotics</title>
+    <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/75526924" type="image/png">
 </head>
 
 <!-- frc logo 🔺⏺🔹 -->
@@ -76,6 +77,12 @@
         max-height: 50vh;
         width: 30rem;
         max-width: 90vw;
+        filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.5));
+        transition: filter 0.5s;
+    }
+
+    .banner-logo img:hover {
+        filter: drop-shadow(0 0 1rem var(--ctp-mocha-text));
     }
 
     .socials {
@@ -91,6 +98,7 @@
         font-size: 4rem;
         padding: 1.2rem;
         transition: transform 150ms ease-in-out;
+        filter: drop-shadow(0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.5));
     }
 
     @media screen and (max-width: 400px) {
