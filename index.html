@@ -14,6 +14,7 @@
     <div class="center">
         <!-- Todo: Find a proper png (hopefully even an svg) for the logo -->
         <div class="banner-logo center"><img src="./media/Atarob-banner-logo.png" alt=""></div>
+        <!-- <div class="banner-logo center"><img src="./media/Untitled_Artwork.png" alt=""></div> -->
         <div class="socials">
             <div class="social-item">
                 <a href="https://instagram.com/AtaturkRobotics" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -57,16 +58,47 @@
     @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css');
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
+    :root {
+        --ctp-base: var(--ctp-mocha-base);
+        --ctp-text: var(--ctp-mocha-text);
+        --ctp-surface0: var(--ctp-mocha-surface0);
+        --ctp-surface0-rgb: 49, 50, 68;
+        --ctp-crust: var(--ctp-mocha-crust);
+        --ctp-pink: var(--ctp-mocha-pink);
+        --ctp-red: var(--ctp-mocha-red);
+        --ctp-blue: var(--ctp-mocha-blue);
+        --ctp-mauve: var(--ctp-mocha-mauve);
+
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --ctp-base: var(--ctp-latte-base);
+            --ctp-text: var(--ctp-latte-text);
+            --ctp-surface0: var(--ctp-latte-surface0);
+            --ctp-surface0-rgb: 204, 208, 218;
+            --ctp-crust: var(--ctp-latte-crust);
+            --ctp-pink: var(--ctp-latte-pink);
+            --ctp-red: var(--ctp-latte-red);
+            --ctp-blue: var(--ctp-latte-blue);
+            --ctp-mauve: var(--ctp-latte-mauve);
+        }
+
+        .banner-logo {
+            filter: invert(1) hue-rotate(180deg);
+        }
+    }
+
     body {
-        color: var(--ctp-mocha-text);
-        background: var(--ctp-mocha-base);
+        color: var(--ctp-text);
+        background: var(--ctp-base);
         padding: 0px;
         margin: 0px;
         font-family: 'Roboto', sans-serif;
     }
 
     a {
-        color: var(--ctp-mocha-text);
+        color: var(--ctp-text);
         text-decoration: none;
     }
 
@@ -90,7 +122,7 @@
     }
 
     .banner-logo img:hover {
-        filter: drop-shadow(0 0 1rem var(--ctp-mocha-text));
+        filter: drop-shadow(0 0 1rem var(--ctp-text));
     }
 
     .socials {
@@ -129,19 +161,19 @@
     }
 
     .fa-instagram {
-        color: var(--ctp-mocha-pink);
+        color: var(--ctp-pink);
     }
 
     .fa-youtube {
-        color: var(--ctp-mocha-red);
+        color: var(--ctp-red);
     }
 
     .fa-linkedin {
-        color: var(--ctp-mocha-blue);
+        color: var(--ctp-blue);
     }
 
     .fa-github {
-        color: var(--ctp-mocha-rosewater);
+        color: var(--ctp-mauve);
     }
 
     .card {
@@ -176,7 +208,7 @@
         width: 13rem;
         transition: width 300ms ease-in-out;
         height: 0.2rem;
-        border-bottom: 2px solid var(--ctp-mocha-text);
+        border-bottom: 2px solid var(--ctp-text);
     }
 
     .card h1:hover::after {
@@ -221,7 +253,7 @@
         margin-top: 0.5rem;
         margin-left: 0.5rem;
         padding: 0.3rem;
-        background-color: rgba(49, 50, 68, 0.85);
+        background-color: rgba(var(--ctp-surface0-rgb), 0.8);
         width: calc(100% - 0.3rem);
         box-shadow: 0.1rem 0.2rem 0.5rem rgba(0, 0, 0, 0.5);
         border-radius: 0 0.4em;
@@ -236,7 +268,7 @@
         margin-top: 8rem;
         text-align: end;
         padding: 1rem;
-        background-color: var(--ctp-mocha-crust);
+        background-color: var(--ctp-crust);
     }
 
     .footer a {
@@ -246,7 +278,7 @@
     }
 
     .footer a:hover {
-        filter: drop-shadow(0 0 0.5rem var(--ctp-mocha-text));
+        filter: drop-shadow(0 0 0.5rem var(--ctp-text));
     }
 </style>
 
