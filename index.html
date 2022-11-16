@@ -42,6 +42,14 @@
         </div>
     </div>
 
+    <div class="footer">
+        <p>
+            © 2023 Atatürk Robotics <br>
+            Made with <i class="fa-solid fa-code"></i> and <i class="fa-solid fa-heart"></i>
+            by <a href="https://deniz.is-a.dev" class="deniztunc">Deniz Tunç</a>
+        </p>
+    </div>
+
 </body>
 
 <style>
@@ -138,9 +146,16 @@
 
     .card {
         width: 30rem;
+        aspect-ratio: 1.1;
         max-width: 80vw;
         position: relative;
         transition: transform 150ms ease-in-out;
+    }
+
+    @media screen and (max-width: 400px) {
+        .card {
+            aspect-ratio: 0.8;
+        }
     }
 
     .card:hover {
@@ -215,6 +230,23 @@
 
     .card p:hover {
         transform: scale(1.01);
+    }
+
+    .footer {
+        margin-top: 8rem;
+        text-align: end;
+        padding: 1rem;
+        background-color: var(--ctp-mocha-crust);
+    }
+
+    .footer a {
+        cursor: pointer;
+        text-decoration: underline;
+        transition: filter 100ms ease-in-out;
+    }
+
+    .footer a:hover {
+        filter: drop-shadow(0 0 0.5rem var(--ctp-mocha-text));
     }
 </style>
 
